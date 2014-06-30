@@ -1,0 +1,158 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:pixlui="http://schemas.android.com/apk/com.neopixl.pixlui">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+   
+     
+    <style name="TopContainerStyles">
+  	    
+  	  	 <item name="android:layout_width">fill_parent</item> 
+		 <item name="android:layout_height">fill_parent</item> 
+		 <item name="android:layout_weight">1</item> 
+		 <item name="android:weightSum">9</item>
+		 <item name="android:gravity">center</item>
+		 <item name="android:padding">10dp</item> 
+		 <item name="android:orientation">vertical</item>
+  		 
+		 
+		 
+  	</style> 
+  	
+     <style name="TopHeadings">
+        
+      	
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">@drawable/header</item>
+        <item name="android:textSize">24sp</item>
+       
+        <item name="android:typeface">monospace</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+      
+        <item name="android:gravity">center</item>
+         
+    
+        
+    </style>
+    
+    <style name="TopSubHeadingElements">
+        
+      	
+         <item name="android:textColor">#ffffff</item>
+         
+         
+        <item name="android:textSize">18sp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0dp</item>
+       
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingTop"> 10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+       
+   		
+        
+    </style>
+    <style name="TopElements">
+        
+      	
+         <item name="android:textColor">#000000</item>
+         
+         
+        <item name="android:textSize">18sp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0dp</item>
+       
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingTop"> 10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+       
+   		
+        
+    </style>
+    
+    
+     <style name="BottomContainerStyles">
+  	    
+  	  	 <item name="android:layout_width">fill_parent</item> 
+		 <item name="android:layout_height">fill_parent</item> 
+		 <item name="android:layout_weight">1</item> 
+		 <item name="android:weightSum">16</item>
+		 <item name="android:gravity">center</item>
+		 <item name="android:padding">10dp</item> 
+		 <item name="android:orientation">vertical</item>
+  		 
+		 
+		 
+  	</style> 
+    
+   
+    
+    <style name="BottomHeadings">
+        
+         <item name="android:textColor">#ffffff</item>
+        <item name="android:background">@drawable/header</item>
+        <item name="android:textSize">18sp</item>
+       
+        <item name="android:typeface">monospace</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">4</item>
+      	<item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+         
+        
+    </style>
+    
+    
+    <style name="BottomSubHeadingElements">
+        
+      	
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:paddingTop"> 0dp</item>
+        <item name="android:paddingLeft">10dp</item>
+   		
+        
+    </style>
+    
+  	<style name="BottomElements">
+        
+      	
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0dp</item>
+        
+        <item name="android:layout_weight">2</item>
+        <item name="android:paddingTop"> 0dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        
+    </style>
+    
+  	
+  	
+
+</resources>
