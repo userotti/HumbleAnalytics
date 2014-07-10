@@ -42,6 +42,8 @@ public class NetworkThreadHandler extends AsyncTask {
     String APPDATA;
     JSONObject APPDATA_JSON;
     
+    String theUri;
+    
     
     AsyncResponse delegate=null;
     
@@ -51,8 +53,8 @@ public class NetworkThreadHandler extends AsyncTask {
     {
 		this.client = new DefaultHttpClient();	
 		
-		// this is stil hardcoded
-		this.setSiteGuid("0C8213F4-E2CC-4396-9F70E74E2A6B978B");
+		//this is stil hardcoded
+		//this.setUri("0C8213F4-E2CC-4396-9F70E74E2A6B978B");
 		
     }
 	
@@ -95,14 +97,15 @@ public class NetworkThreadHandler extends AsyncTask {
 	public void prepForExecution(){
 		
 		if (this.request_type.equals("get")){
-			if (this.the_site_guid != null){
+			if (this.theUri != null){
 					this.buildFinalSiteGuidUrl();
 					this.get_req = new HttpGet(this.finalURL);
+					Log.d("url", this.finalURL);
 					
 					
 					
 				}else{
-					Log.d("SITEGUID", "site guid is null");
+					Log.d("theUri", "site guid is null");
 				}	
 			}
 		
@@ -113,15 +116,15 @@ public class NetworkThreadHandler extends AsyncTask {
 	
 	
 	
-	private void setSiteGuid(String site_guid){
+	public void setUri(String uri){
 		
-		this.the_site_guid = site_guid;
+		this.theUri = uri;
 		
 	}
 	
 	private void buildFinalSiteGuidUrl(){
 		
-		this.setFinalUrl(this.baseURL + this.the_site_guid);
+		this.setFinalUrl(this.baseURL + this.theUri);
 		
 	}
 	
@@ -141,33 +144,21 @@ public class NetworkThreadHandler extends AsyncTask {
 	    this.get_req.setHeader("Authorization", basicAuth);
 	        
 	    try{
-	       
 	       this.response = this.client.execute(this.get_req);
-	      
-	       
-	       	    
-		}
+	 	}
 		catch(Exception ex)
 		{
-			
 		   Log.e("MYAPP_check2_execute", "exception" + ex);
 		}
 	    
-	    
 	    try{
-	       
 	       BufferedReader rd = new BufferedReader(new InputStreamReader(this.response.getEntity().getContent()));
-	       
-	       
 	       String line = "";
 	            while ((line = rd.readLine()) != null) {
-	              
 	              this.APPDATA = line; 
 	            }
 	            
 	            this.APPDATA_JSON = new JSONObject(this.APPDATA);
-	            //Log.d("this.APPDATA message",  this.APPDATA_JSON.getString("message"));
-	            
 		}
 		catch(Exception ex)
 		{
@@ -176,13 +167,10 @@ public class NetworkThreadHandler extends AsyncTask {
 		
 	}
 	
-	
 	@Override
 	protected Object doInBackground(Object... params) {
 		
 		this.doTheAuthRequest();
-		
-       
 				
 		return null;
 	}

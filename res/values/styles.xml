@@ -18,6 +18,214 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
    
+    
+    
+    <style name="MainContainer">
+  	    
+  	  	 <item name="android:layout_width">fill_parent</item> 
+		 <item name="android:layout_height">fill_parent</item> 
+		 <item name="android:layout_weight">1</item> 
+		 <item name="android:weightSum">1</item>
+		 <item name="android:gravity">top</item>
+		 <item name="android:padding">@dimen/padding_between</item> 
+		 <item name="android:orientation">vertical</item>
+		 
+  	</style>
+  	
+   <!--
+    <style name="Headings">
+        
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingRight">@dimen/dropshadow_size</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:gravity">left</item>
+         
+    </style> --> 
+    
+    <!--  will app look -->
+    
+    
+     <style name="RelativeBasicContainer">
+        
+        <item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_height">fill_parent</item> 
+		<item name="android:layout_weight">1</item> 
+		<item name="android:gravity">top</item>
+		<item name="android:padding">@dimen/padding_between</item> 
+		<item name="android:background">@drawable/white_background</item>
+  		
+     </style>
+     
+     <style name="Headings">
+        
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingRight">@dimen/dropshadow_size</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">4</item>
+        <item name="android:gravity">center_horizontal</item>
+         
+    </style>
+    
+     
+    
+     <style name="Elements">
+      	
+        <item name="android:textColor">#000000</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:paddingRight">@dimen/dropshadow_size</item>
+        <item name="android:gravity">center_horizontal</item>
+        
+        
+        
+        
+    </style>
+  	
+      <style name="ImageElements">
+      	
+       
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:paddingRight">@dimen/dropshadow_size</item>
+        
+        
+    </style>
+    
+    <style name="BasicContainer">
+        
+        <item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_height">fill_parent</item> 
+		<item name="android:layout_weight">1</item> 
+		<item name="android:weightSum">20</item>
+		<item name="android:gravity">top</item>
+		<item name="android:padding">@dimen/padding_between</item> 
+		<item name="android:orientation">vertical</item>
+		<item name="android:background">@drawable/white_background</item>
+  		 
+        
+    </style>
+    <style name="GrossProfitContainer">
+        
+        <item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_height">fill_parent</item> 
+		<item name="android:layout_weight">1</item> 
+		<item name="android:weightSum">20</item>
+		<item name="android:gravity">top</item>
+		<item name="android:padding">@dimen/padding_between</item> 
+		<item name="android:orientation">vertical</item>
+		<item name="android:background">@drawable/grossprofit_background</item>
+  		 
+        
+    </style>
+    
+    <style name="TurnoverContainer">
+        
+        <item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_height">fill_parent</item> 
+		<item name="android:layout_weight">1</item> 
+		<item name="android:weightSum">20</item>
+		<item name="android:gravity">top</item>
+		<item name="android:padding">@dimen/padding_between</item> 
+		<item name="android:orientation">vertical</item>
+		<item name="android:background">@drawable/turnover_background</item>
+  		 
+        
+    </style>
+    
+    <style name="TodaySalesContainer">
+        
+        <item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_height">fill_parent</item> 
+		<item name="android:layout_weight">1</item> 
+		<item name="android:weightSum">20</item>
+		<item name="android:gravity">top</item>
+		<item name="android:padding">@dimen/padding_between</item> 
+		<item name="android:orientation">vertical</item>
+		<item name="android:background">@drawable/todaysales_background</item>
+  		 
+        
+    </style>
+    
+    <style name="TodayTransactionsContainer">
+        
+        <item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_height">fill_parent</item> 
+		<item name="android:layout_weight">1</item> 
+		<item name="android:weightSum">20</item>
+		<item name="android:gravity">top</item>
+		<item name="android:padding">@dimen/padding_between</item> 
+		<item name="android:orientation">vertical</item>
+		<item name="android:background">@drawable/todaytransactions_background</item>
+  		 
+        
+    </style>
+    
+    <style name="StockOnHandContainer">
+        
+        <item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_height">fill_parent</item> 
+		<item name="android:layout_weight">1</item> 
+		<item name="android:weightSum">20</item>
+		<item name="android:gravity">top</item>
+		<item name="android:padding">@dimen/padding_between</item> 
+		<item name="android:orientation">vertical</item>
+		<item name="android:background">@drawable/stockonhand_background</item>
+  		 
+        
+    </style>
+    
+    <style name="TopSellingProdContainer">
+        
+        <item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_height">fill_parent</item> 
+		<item name="android:layout_weight">1</item> 
+		<item name="android:weightSum">20</item>
+		<item name="android:gravity">top</item>
+		<item name="android:padding">@dimen/padding_between</item> 
+		<item name="android:orientation">vertical</item>
+		<item name="android:background">@drawable/topsellingprod_background</item>
+  		 
+        
+    </style>
+    
+    <style name="TopSalesPersonContainer">
+        
+        <item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_weight">1</item> 
+		<item name="android:weightSum">20</item>
+		<item name="android:gravity">top</item>
+		<item name="android:layout_height">fill_parent</item> 
+		<item name="android:padding">@dimen/padding_between</item> 
+		<item name="android:orientation">vertical</item>
+		<item name="android:background">@drawable/topsalesperson_background</item>
+  	    
+    </style>
+    
+    <style name="MyCurrenciesContainer">
+        
+        <item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_height">fill_parent</item> 
+		<item name="android:layout_weight">1</item> 
+		<item name="android:weightSum">20</item>
+		<item name="android:gravity">top</item>
+		<item name="android:padding">@dimen/padding_between</item> 
+		<item name="android:orientation">vertical</item>
+		<item name="android:background">@drawable/mycurrencies_background</item>
+  	    
+    </style>
+    
+    <!--  HIER VOLG DIEOU GOED -->
+     
+     
+     
+     
+     
      
     <style name="TopContainerStyles">
   	    
@@ -29,67 +237,24 @@
 		 <item name="android:padding">10dp</item> 
 		 <item name="android:orientation">vertical</item>
   		 
-		 
-		 
   	</style> 
-  	
-     <style name="TopHeadings">
-        
-      	
-        <item name="android:textColor">#ffffff</item>
-        <item name="android:background">@drawable/header</item>
-        <item name="android:textSize">24sp</item>
-       
-        <item name="android:typeface">monospace</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">0dp</item>
-        <item name="android:layout_weight">1</item>
-      
-        <item name="android:gravity">center</item>
-         
-    
-        
-    </style>
+
     
     <style name="TopSubHeadingElements">
         
-      	
-         <item name="android:textColor">#ffffff</item>
-         
-         
+        <item name="android:textColor">#ffffff</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:typeface">monospace</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">0dp</item>
-       
         <item name="android:layout_weight">1</item>
         <item name="android:paddingTop"> 10dp</item>
         <item name="android:paddingLeft">10dp</item>
-       
-   		
-        
-    </style>
-    <style name="TopElements">
-        
-      	
-         <item name="android:textColor">#000000</item>
-         
-         
-        <item name="android:textSize">18sp</item>
-        <item name="android:typeface">monospace</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">0dp</item>
-       
-        <item name="android:layout_weight">1</item>
-        <item name="android:paddingTop"> 10dp</item>
-        <item name="android:paddingLeft">10dp</item>
-       
-   		
         
     </style>
     
+   
     
-     <style name="BottomContainerStyles">
+    <style name="BottomContainerStyles">
   	    
   	  	 <item name="android:layout_width">fill_parent</item> 
 		 <item name="android:layout_height">fill_parent</item> 
@@ -98,32 +263,24 @@
 		 <item name="android:gravity">center</item>
 		 <item name="android:padding">10dp</item> 
 		 <item name="android:orientation">vertical</item>
-  		 
-		 
-		 
+  	 
   	</style> 
-    
-   
     
     <style name="BottomHeadings">
         
-         <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">#ffffff</item>
         <item name="android:background">@drawable/header</item>
         <item name="android:textSize">18sp</item>
-       
         <item name="android:typeface">monospace</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_weight">4</item>
       	<item name="android:padding">10dp</item>
         <item name="android:gravity">center</item>
-         
         
     </style>
     
-    
     <style name="BottomSubHeadingElements">
-        
       	
         <item name="android:textColor">#ffffff</item>
         <item name="android:textSize">14sp</item>
@@ -138,14 +295,12 @@
     </style>
     
   	<style name="BottomElements">
-        
       	
         <item name="android:textColor">#000000</item>
         <item name="android:textSize">14sp</item>
         <item name="android:typeface">monospace</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">0dp</item>
-        
         <item name="android:layout_weight">2</item>
         <item name="android:paddingTop"> 0dp</item>
         <item name="android:paddingLeft">10dp</item>

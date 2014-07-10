@@ -2,20 +2,22 @@ package com.example.humbleanalytics;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
 
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,16 +25,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.os.Build;
+import com.humbletill.humbleanalytics.R;
 
 public class MainActivity extends ActionBarActivity implements AsyncResponse {
 	
 	
-	Button submit_btn;
+	/*Button submit_btn;
 
     EditText email_edit, password_edit;
     String email_str, password_str;
@@ -40,12 +47,16 @@ public class MainActivity extends ActionBarActivity implements AsyncResponse {
     String address;
     NetworkThreadHandler handler;
     
-    JSONObject RECIEVED_APPDATA_JSON;
+    JSONObject ALL_THE_SITEGUIDS;
     Boolean task_is_running = false;
     ProgressBar loading_circle;
-    TextView login_message;
+    TextView login_message;*/
     
-    
+	AnimatorSet set;
+	
+	AnalyticsApplication THEAPP;
+	Boolean task_is_running;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,31 +69,115 @@ public class MainActivity extends ActionBarActivity implements AsyncResponse {
 		}
 		
 		
-		this.makeNewAsyncTask();
+		 this.THEAPP = ((AnalyticsApplication) this.getApplication());
+		 this.task_is_running = false;  
 		
 		
+		
+	}
+	
+	public void processFinish(Object output_message){
+		
+		 String message = (String) output_message;
+		 
+		 TextView login_message = (TextView) findViewById(R.id.main_login_message);
+		
+		 if (message.equals("OK")){
+			 
+			 login_message.setText("Login Successful.");
+			 this.THEAPP.makeNewSiteActivity("dashboard", 0, true);
+		 
+		 }else{
+			 
+			 login_message.setText(message);
+			 
+		 };
+		 
+		 findViewById(R.id.loadingsquareID).setVisibility(View.GONE);
+		 this.task_is_running = false;
+		 
+		 
 		
 	}
 	
 	protected void onResume(){
 		super.onResume();
 		
-		EditText e = (EditText) findViewById(R.id.email_textedit);
+	    View v = findViewById(R.id.loadingsquareID);
+	    ObjectAnimator animation1 = ObjectAnimator.ofFloat(v, "rotationY", 0.0f, 1080f);
+	    ObjectAnimator animation2 = ObjectAnimator.ofFloat(v, "rotationX", 0.0f, 0.0f);
+	    
+		animation1.setRepeatCount(ObjectAnimator.INFINITE);
+		animation1.setInterpolator(new AccelerateDecelerateInterpolator());
 		
-		e.requestFocus();
+		animation2.setRepeatCount(ObjectAnimator.INFINITE);
+		animation2.setInterpolator(new AccelerateDecelerateInterpolator());
+		
+		this.set = new AnimatorSet();
+		this.set.play(animation1).with(animation2);
+		this.set.setDuration(2500);
+		
+		ImageView img = (ImageView) findViewById(R.id.loadingsquareID);
+		img.setVisibility(View.GONE); 
+		
+		RelativeLayout.LayoutParams p = new RelativeLayout.LayoutParams(250,
+		        ViewGroup.LayoutParams.WRAP_CONTENT);
 		
 		
+		((TextView) findViewById(R.id.main_login_message)).setText("");
+		
+        if (this.THEAPP.hasCurrentUser() == true){
+        	
+        	String str = this.THEAPP.getUserEmail();
+        	
+        
+        	Button newbtn = (Button) findViewById(R.id.continueBtn);
+        	newbtn.setVisibility(View.VISIBLE);
+        	newbtn.setText(str);
+        	
+        	
+        }else{
+        	
+        	Button newbtn = (Button) findViewById(R.id.continueBtn);
+        	
+        	newbtn.setVisibility(View.GONE);
+        	/*if (newbtn != null){
+	        	ViewGroup vg = (ViewGroup)(newbtn.getParent());
+	        	vg.removeView(newbtn);
+        	}
+        	
+        	RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) findViewById(R.id.loginBtn).getLayoutParams();
+    		params.addRule(RelativeLayout.BELOW, R.id.imageView1);*/
+    		
+        }
+        
 	}
 	
-	private void makeNewAsyncTask(){
+	public void continueButton(View view){
 		
-		handler = null;
-		handler = new NetworkThreadHandler();
-		handler.delegate = this;
+		if (this.task_is_running == false){
+			
+		this.set.start();
+		ImageView img = (ImageView) findViewById(R.id.loadingsquareID);
+		img.setVisibility(View.VISIBLE); 
 		
-		this.task_is_running = false; 
+		//this.THEAPP.BootStrapStart();
 		
+		this.THEAPP.setDelegate(this);
+		this.THEAPP.makeNewAsyncTaskForLogin();
+		this.THEAPP.shootTheRequest();
+		
+		this.task_is_running = true;
+		
+		}
 	}
+	
+	public void loginButton(View view){
+		
+		this.THEAPP.makeNewActivity("login");
+	
+	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -103,86 +198,6 @@ public class MainActivity extends ActionBarActivity implements AsyncResponse {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
-	@Override
-	public void processFinish(Object output){
-		
-		 this.RECIEVED_APPDATA_JSON = (JSONObject) output;
-		 
-		 this.login_message = (TextView) findViewById(R.id.output_view);
-		 this.login_message.setTextColor(Color.parseColor("#ffffff"));
-		  
-		 try {
-			 if (this.RECIEVED_APPDATA_JSON.getString("message").equals("OK")){
-				 
-				 this.login_message.setText("Login Successful.");
-				 
-			 }else{
-				 
-				 this.login_message.setText(this.RECIEVED_APPDATA_JSON.getString("message"));
-				 
-			 }
-				 
-     	 } catch (JSONException e) { 
-			e.printStackTrace();
-		 }
-	     
-	     try {
-			 
-	    	 //Make the new Activity
-	    	 if (this.RECIEVED_APPDATA_JSON.getString("message").equals("OK")){
-				  	
-				Intent intent = new Intent(this, DisplayAppData.class);
-				intent.putExtra("DATA_STRING", this.RECIEVED_APPDATA_JSON.toString());
-				startActivity(intent);
-			
-			 }
-		} catch (JSONException e) {
-			
-			e.printStackTrace();
-		}
-	     
-	     
-	     this.makeNewAsyncTask();
-	     this.loading_circle.setVisibility(View.GONE);
-		
-	}
-	
-	/* This is the submit button onClick function */
-
-	public void clickFunc1(View view){
-		
-        if (this.task_is_running == false){
-        
-        	this.loading_circle = (ProgressBar) findViewById(R.id.loading_animation);
-        	this.loading_circle.setVisibility(View.VISIBLE);
-        	
-        	this.login_message = (TextView) findViewById(R.id.output_view);
-        	this.login_message.setText("");
-        	
-			email_edit = (EditText)findViewById(R.id.email_textedit);
-	        password_edit = (EditText)findViewById(R.id.password_textedit);
-	                
-	        email_str = email_edit.getText().toString();
-	        password_str = password_edit.getText().toString();
-	    
-	        
-	        try{
-	        	handler.setRequestType("get");
-	        	handler.setTheAuthHeaderValues(email_str, password_str);
-	        	handler.prepForExecution();
-	        	handler.execute( this );   
-	        	this.task_is_running = true;
-	        
-	        }catch(Exception e){
-	        	
-	        	Log.d("GET REQUEST", "issue with the network");
-	        	e.printStackTrace();
-	        }
-        
-        }
-	}
-
 	
 	/**
 	 * A placeholder fragment containing a simple view.

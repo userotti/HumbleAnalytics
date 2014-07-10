@@ -1,0 +1,871 @@
+<!-- MAIN 2 ROW LAYOUT -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pixlui="http://schemas.android.com/apk/com.neopixl.pixlui"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="fill"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:weightSum="2"
+    tools:context="com.example.humbleanalytics.DashBoard"
+     >
+    
+     <!-- FIRST ROW LAYOUT -->
+    	
+	 <LinearLayout
+	     
+	 android:layout_width="fill_parent"
+	 android:layout_height="fill_parent" 
+	 android:layout_weight="1"
+	 android:weightSum="4"
+	 android:gravity="center"
+	
+	 android:orientation="horizontal">
+	    	   
+		<!--START OF 4 TOP ELEMENTS -->
+		
+		<!--  GROSS PROFIT -->
+		
+		<LinearLayout
+		 	style="@style/MainContainer"
+		 	android:background="@color/black"
+		>
+		    <LinearLayout
+			 	style="@style/BasicContainer"
+			>
+			
+		        
+		        <TextView 
+		            android:id="@+id/gross_profit_heading"
+				    style="@style/Headings"
+				     android:text="Gross Profit - MTD"
+				    android:typeface="normal" />
+		            />
+		            
+		        <ImageView
+		 		    android:id="@+id/thumbs_icon1"
+		 		    android:layout_width="fill_parent"
+		 		    android:layout_weight="4"
+		 		    style="@style/ImageElements"
+		 		    android:src="@drawable/thumbsup"
+		 			/>    
+		         
+		        <TextView 
+		            android:id="@+id/gp_perc_view"
+		            style="@style/Elements"
+				    android:text="42"
+				    android:textSize="70sp"
+				    android:layout_weight="5"
+				    android:typeface="normal" />
+		        
+		        <TextView 
+		            style="@style/Elements"
+				    android:text="Gross Profit Percentage"
+				    android:textSize="12sp"
+				    android:layout_weight="3"
+				    android:typeface="normal"
+				     />
+		         
+		         <TextView 
+		            android:id="@+id/gp_view"
+				    style="@style/Elements"
+				    android:text="R 13.00"
+				    android:textSize="30sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		         
+		         <TextView 
+		            style="@style/Elements"
+				    android:text="Gross Profit Value"
+				    android:textSize="12sp"
+				    android:layout_weight="1"
+				    android:typeface="normal"
+				     />
+		         
+		         
+		         
+		 	</LinearLayout>
+	    </LinearLayout>
+
+    	<!--  TURNOVER -->	 
+		 	    
+		<LinearLayout
+	
+		 	style="@style/MainContainer"
+		 	android:background="@color/black"
+		 	
+		>
+		    <LinearLayout
+			 	style="@style/BasicContainer"
+			 	
+		 	>
+		        
+		            <TextView 
+		            android:id="@+id/turnover_heading"
+				    style="@style/Headings"
+				    android:text="Turnover - MTD"
+				    android:typeface="normal" />
+					
+		            <ImageView
+		 		    android:id="@+id/thumbs_icon1"
+		 		    android:layout_width="fill_parent"
+		 		    android:layout_weight="4"
+		 		    style="@style/ImageElements"
+		 		    android:src="@drawable/thumbsup"
+		 			/>
+		           
+		            <TextView 
+		            style="@style/Elements"
+				    android:layout_weight="2"
+				   />
+		            
+		            <TextView 
+		            android:id="@+id/turnover_view"
+				    style="@style/Elements"
+				    android:text="R 4403.00"
+				    android:textSize="30sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		            
+		            <TextView 
+		            style="@style/Elements"
+				    android:text="Gross Profit Value"
+				    android:textSize="12sp"
+				    android:layout_weight="1"
+				    android:typeface="normal"
+				     />
+		           
+		        
+		 	</LinearLayout>	
+	    </LinearLayout>
+	    
+		<!--  TODAY'S SALES -->	 
+		
+	    <LinearLayout
+	
+		 	style="@style/MainContainer"
+		 	android:background="@color/black"
+		 	
+		>
+		    <LinearLayout
+			 	style="@style/BasicContainer"
+			 	
+		 	>
+		        <TextView 
+		            android:id="@+id/today_sales_heading"
+				    style="@style/Headings"
+				    android:text="Today's Sales"
+				    android:typeface="normal"
+			    
+		        /> 
+		        
+		      
+			    <TextView 
+		            android:id="@+id/todays_sales_view"
+				    style="@style/Elements"
+				    android:text="R 10423.43"
+				     android:textSize="25sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" /> 
+				
+			     <TextView 
+		            android:id="@+id/todays_sales_heading"
+				    style="@style/Elements"
+				    android:text="Sales:"
+				    android:textSize="15sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" /> 
+			    
+		        <TextView 
+		            android:id="@+id/todays_tax_view"
+				    style="@style/Elements"
+				    android:text="R 10423.43"
+				     android:textSize="25sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />   
+		        
+		        <TextView 
+		            android:id="@+id/todays_tax_heading"
+				    style="@style/Elements"
+				    android:text="Tax:"
+				    android:textSize="15sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" /> 
+		        
+		      <TextView 
+		            android:id="@+id/todays_sales_ave_trans_view"
+				    style="@style/Elements"
+				    android:text="R 223.40"
+				    android:textSize="25sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		      
+		      <TextView 
+		            android:id="@+id/todays_sales_ave_trans_heading"
+				    style="@style/Elements"
+				    android:text="Transaction Average:"
+				    android:textSize="15sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" /> 
+		      
+		        <TextView 
+		            android:id="@+id/todays_sales_trans_comp_view"
+				    style="@style/Elements"
+				    android:text="23"
+				    android:textSize="25sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		        
+		        <TextView 
+		            android:id="@+id/todays_sales_trans_comp_heading"
+				    style="@style/Elements"
+				    android:text="Transactions Complete:"
+				    android:textSize="15sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />   
+		       
+		        
+		 	</LinearLayout>	
+	    </LinearLayout>
+	    
+	   	<!-- TODAY'S TRANSACTIONS -->
+	   	
+	    <LinearLayout
+	
+		 	style="@style/MainContainer"
+		 	android:background="@color/black"
+		 	
+		>
+		    <LinearLayout
+			 	style="@style/BasicContainer"
+			 	
+		 	>
+		          <TextView 
+		            android:id="@+id/trans_cash_heading"
+				    style="@style/Headings"
+				    
+				    android:text="Today's Transactions"
+				    android:typeface="normal"
+				  />     
+				  
+		           <TextView 
+		            android:id="@+id/todays_trans_cash_view"
+				    style="@style/Elements"
+				    android:text="R 103.23"
+				    android:textSize="25sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" /> 
+				    
+		       
+				    
+		        <TextView 
+		            android:id="@+id/todays_transactions_cash_heading"
+		           
+				    style="@style/Elements"
+				    android:text="Cash:"
+				    android:textSize="15sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />    
+		        
+		        <TextView 
+		            android:id="@+id/todays_trans_card_view"
+				    style="@style/Elements"
+				    android:text="R 223.40"
+				    android:textSize="25sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" /> 
+				   
+		        <TextView 
+		            android:id="@+id/todays_transactions_card_heading"
+		            style="@style/Elements"
+				    android:text="Cash:"
+				    android:textSize="15sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		        
+		        <TextView 
+		            android:id="@+id/todays_trans_snapscan_view"
+				    style="@style/Elements"
+				    android:text="R 59.03"
+				    android:textSize="25sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" /> 
+				    
+		        <TextView 
+		            android:id="@+id/todays_transactions_snapscan_heading"
+				    style="@style/Elements"
+				    android:text="SnapScan:"
+				    android:paddingTop="0dp"
+				    android:paddingLeft="10dp"
+				    android:textSize="15sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		        
+		        
+		        <TextView 
+		            android:id="@+id/todays_trans_change_view"
+				    style="@style/Elements"
+				    android:text="R 2344"
+				    android:textSize="25sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" /> 
+				    
+		        <TextView 
+		            android:id="@+id/todays_transactions_change_heading"
+				    style="@style/Elements"
+				    android:text="Change:"
+				    android:paddingTop="0dp"
+				    android:paddingLeft="10dp"
+				    android:textSize="15sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		        	
+		 	</LinearLayout>	
+	    </LinearLayout>
+	    
+		 
+		 	
+	 </LinearLayout> 
+	  
+	 <!-- SECOND ROW 4 ITEMS #############################################-->
+	
+	 <LinearLayout
+	     
+	 android:layout_width="fill_parent"
+	 android:layout_height="fill_parent" 
+	 android:layout_weight="1"
+	 android:weightSum="6"
+	 android:gravity="center"
+	 android:orientation="horizontal">
+	   
+	   <!--START OF 6  Bottom ELEMENTS -->
+		
+		<!--  Stock on hand -->
+		
+		<LinearLayout
+		 	style="@style/MainContainer"
+		 	android:background="@color/black"
+		>
+		    <LinearLayout
+			 	style="@style/BasicContainer"
+			 	
+		 	>
+		        <TextView 
+		            android:id="@+id/stock_on_hand_heading"
+				    style="@style/Headings"
+				    
+				    android:text="Stock On Hand"
+				    android:typeface="normal"
+				 />  
+				 
+		         <TextView 
+		            android:id="@+id/stock_on_hand_cost_view"
+				    style="@style/Elements"
+				    android:text="R 223.40"
+				    android:textSize="26sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		        
+		         <TextView 
+		            android:id="@+id/stock_on_hand_cost_heading"
+				    style="@style/Elements"
+				    android:text="Cost Value"
+				    android:textSize="18sp"
+				    android:layout_weight="5"
+				    android:typeface="normal" /> 
+			    
+		        <TextView 
+		            android:id="@+id/stock_on_hand_retail_view"
+				    style="@style/Elements"
+				    android:text="23"
+				    android:textSize="26sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		        
+		         <TextView 
+		            android:id="@+id/stock_on_hand_retail_heading"
+				    style="@style/Elements"
+				    
+				    android:text="Retail Value"
+				    android:textSize="18sp"
+				    android:layout_weight="4"
+				    android:typeface="normal" /> 
+		        
+		        
+		 	</LinearLayout>
+	    </LinearLayout>
+
+    	<!--  TOP SELLINGR -->	 
+		 	    
+		<LinearLayout
+	
+		 	style="@style/MainContainer"
+		 	android:background="@color/black"
+		 	
+		>
+		    <LinearLayout
+			 	style="@style/BasicContainer"
+			 	
+		 	>
+		       <TextView 
+		            android:id="@+id/top_selling_prod_heading"
+				    style="@style/Headings"
+				     android:layout_weight="3"
+				    android:text="Top Selling Products"
+				    android:typeface="normal"
+				    />
+
+		       <TextView
+		           android:id="@+id/top_selling_product1"
+		           style="@style/Elements"
+		           android:layout_weight="2"
+		           android:paddingTop="5dp"
+		           android:text=""
+		           android:textSize="20sp"
+		           android:typeface="normal" />
+		       		
+		       		<TextView 
+		            android:id="@+id/top_selling_product_amount1"
+				    style="@style/Elements"
+				    android:text=""
+				    android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />
+		       		
+		       		
+		 			
+		 			<TextView 
+		            android:id="@+id/top_selling_product2"
+				    style="@style/Elements"
+				    android:text=""
+				    android:textSize="20sp"
+				    android:paddingTop="5dp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_selling_product_amount2"
+				    style="@style/Elements"
+				    android:text=""
+				    android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_selling_product3"
+				    style="@style/Elements"
+				    android:text=""
+				    android:textSize="20sp"
+				    android:paddingTop="5dp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_selling_product_amount3"
+				    style="@style/Elements"
+				    android:text=""
+				    android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_selling_product4"
+				    style="@style/Elements"
+				    android:text=""
+				    android:textSize="20sp"
+				    android:paddingTop="5dp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_selling_product_amount4"
+				    style="@style/Elements"
+				    android:text=""
+				    android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_selling_product5"
+				    style="@style/Elements"
+				    android:text=""
+				    android:textSize="20sp"
+				    android:paddingTop="5dp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_selling_product_amount5"
+				    style="@style/Elements"
+				    android:text=""
+				    android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />
+				    
+		 	</LinearLayout>	
+	    </LinearLayout>
+	    
+		<!--  TOP Sales People -->	 
+		
+	    <LinearLayout
+	
+		 	style="@style/MainContainer"
+		 	android:background="@color/black"
+		 	
+		>
+		    <LinearLayout
+			 	style="@style/BasicContainer"
+			 	
+		 	>
+		 		<TextView 
+		            android:id="@+id/trading_desity_heading"
+				    style="@style/Headings"
+				    android:text="Trading Density"
+				    android:typeface="normal"
+				 />  
+				 
+		 		 
+				   
+		        <TextView 
+		            android:id="@+id/sales_persqrmtr_view"
+				    style="@style/Elements"
+				    android:text="R4598"
+				    android:textSize="26sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		        <TextView 
+		            android:id="@+id/sales_persqrmtr_heading"
+				    style="@style/Elements"
+				    android:text="Sales Per m^2:"
+				    android:textSize="18sp"
+				    android:layout_weight="5"
+				    android:typeface="normal" />
+		        
+		        
+				    
+		        <TextView 
+		            android:id="@+id/gp_persqrmtr_view"
+				    style="@style/Elements"
+				    android:text="23"
+				    android:textSize="26sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		        <TextView 
+		            android:id="@+id/gp_persqrmtr_heading"
+				    style="@style/Elements"
+				    android:text="GP Per m^2:"
+				    android:textSize="18sp"
+				    android:layout_weight="5"
+				    android:typeface="normal" /> 
+		        
+		 	</LinearLayout>
+	    </LinearLayout>
+	    
+	   	<!-- Trading Desity -->
+	   	
+	    <LinearLayout
+	
+		 	style="@style/MainContainer"
+		 	android:background="@color/black"
+		 	
+		>
+		    //HIERSOE!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		    
+		    
+		    <LinearLayout
+			 	style="@style/BasicContainer"
+			 	
+		 	>	
+		 			<TextView 
+		            android:id="@+id/top_sales_person_heading"
+				    style="@style/Headings"
+				    android:layout_weight="3"
+				    android:text="Top Sales People"
+				    android:typeface="normal"
+				    />  
+				    
+		 			
+		 			<TextView 
+		            android:id="@+id/top_sales_person1"
+				    style="@style/Elements"
+				    android:text=""
+				    android:paddingTop="5dp"
+					android:textSize="20sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_sales_person_amount1"
+				    style="@style/Elements"
+				    android:text=""
+					android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />
+		 			
+		 			
+		 			
+		 			
+		 			<TextView 
+		            android:id="@+id/top_sales_person2"
+				    style="@style/Elements"
+				    android:text=""
+				    android:paddingTop="5dp"
+				    android:textSize="20sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_sales_person_amount2"
+				    style="@style/Elements"
+				    android:text=""
+					android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />
+		 			
+		 			
+		 			<TextView 
+		            android:id="@+id/top_sales_person3"
+				    style="@style/Elements"
+				    android:text=""
+				    android:paddingTop="5dp"
+				    android:textSize="20sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_sales_person_amount3"
+				    style="@style/Elements"
+				    android:text=""
+					android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_sales_person4"
+				    style="@style/Elements"
+				    android:text=""
+				    android:paddingTop="5dp"
+				    android:textSize="20sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_sales_person_amount4"
+				    style="@style/Elements"
+				    android:text=""
+					android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_sales_person5"
+				    style="@style/Elements"
+				    android:text=""
+				    android:paddingTop="5dp"
+				    android:textSize="20sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_sales_person_amount5"
+				    style="@style/Elements"
+				    android:text=""
+					android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />
+		 			
+				    
+		       
+		 	</LinearLayout>	
+		    
+		    
+		    
+		    
+		    	
+	    </LinearLayout>
+	    
+	    <LinearLayout
+	
+		 	style="@style/MainContainer"
+		 	android:background="@color/black"
+		 	
+		>
+		    <LinearLayout
+			 	style="@style/BasicContainer"
+			 	
+		 	>
+		 		<TextView 
+		            android:id="@+id/top_catergories_heading"
+				    style="@style/Headings"
+				    android:layout_weight="3"
+				    android:text="Top Categories"
+				    android:typeface="normal"
+				 /> 
+				 
+		 	
+				    
+		       		<TextView 
+		            android:id="@+id/top_selling_cat1"
+				    style="@style/Elements"
+				    android:text=""
+				    android:paddingTop="5dp"
+				    android:textSize="20sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		       		
+		       		<TextView 
+		            android:id="@+id/top_selling_cat_amount1"
+				    style="@style/Elements"
+				    android:text=""
+				    android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />
+		       		
+		       		
+		 			<TextView 
+		            android:id="@+id/top_selling_cat2"
+				    style="@style/Elements"
+				    android:text=""
+				    android:paddingTop="5dp"
+				    android:textSize="20sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_selling_cat_amount2"
+				    style="@style/Elements"
+				    android:text=""
+				    android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />
+		 			
+		 			
+		 			
+		 			<TextView 
+		            android:id="@+id/top_selling_cat3"
+				    style="@style/Elements"
+				    android:text=""
+				    android:paddingTop="5dp"
+				    android:textSize="20sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_selling_cat_amount3"
+				    style="@style/Elements"
+				    android:text=""
+				    android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_selling_cat4"
+				    style="@style/Elements"
+				    android:text=""
+				    android:paddingTop="5dp"
+				    android:textSize="20sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_selling_cat_amount4"
+				    style="@style/Elements"
+				    android:text=""
+				    android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />
+		 			
+		 			<TextView 
+		            android:id="@+id/top_selling_cat5"
+				    style="@style/Elements"
+				    android:text=""
+				    android:paddingTop="5dp"
+				    android:textSize="20sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />	
+				    
+		 			<TextView 
+		            android:id="@+id/top_selling_cat_amount5"
+				    style="@style/Elements"
+				    android:text=""
+				    android:textSize="14sp"
+				    android:layout_weight="1"
+				    android:typeface="normal" />	
+		        
+		 	</LinearLayout>	
+	    </LinearLayout>
+	    
+	    <LinearLayout
+	
+		 	style="@style/MainContainer"
+		 	android:background="@color/black"
+		 	
+		>
+		    <LinearLayout
+			 	style="@style/BasicContainer"
+			 	
+		 	>
+		 		<TextView 
+		            android:id="@+id/store_weather_heading"
+				    style="@style/Headings"
+				    android:text="Store Weather"
+				    android:typeface="normal"
+				/>
+				
+		 	
+		 		
+		 		<ImageView
+		 		    android:id="@+id/weather_image"
+		 		    android:layout_width="fill_parent"
+		 		    android:layout_weight="6"
+		 		    android:paddingTop="5dp"
+		 		    style="@style/ImageElements"
+		 		    
+		 		/>
+		 		
+		 		<TextView 
+		            android:id="@+id/weather_tempc_view"
+				    style="@style/Elements"
+				    android:text="14 Degrees Celcius"
+				    android:gravity="center"
+				    android:paddingTop="10dp"
+				    android:paddingLeft="0dp"
+				    android:textSize="48sp"
+				    android:layout_weight="4"
+				    android:typeface="normal" />
+		 		
+		 		<TextView 
+		            android:id="@+id/weather_tempc_view"
+				    style="@style/Elements"
+				    android:text="Degrees Celcius"
+				    android:gravity="center"
+				    android:paddingTop="0dp"
+				    android:paddingLeft="0dp"
+				    android:textSize="12sp"
+				    android:layout_weight="2"
+				    android:typeface="normal" />
+		 		
+		 			
+		 			<TextView 
+		            android:id="@+id/weather_descr_view"
+				    style="@style/Elements"
+				    android:text="Party asdf"
+				    android:paddingTop="0dp"
+				    android:paddingLeft="0dp"
+				    android:textSize="18sp"
+				    android:layout_weight="3"
+				    android:typeface="normal"
+				    android:gravity="center"
+				     />
+		 		
+		        
+		 	</LinearLayout>	
+	    </LinearLayout>
+	    	
+	    	
+	</LinearLayout> 
+	  
+	 
+    
+</LinearLayout>
