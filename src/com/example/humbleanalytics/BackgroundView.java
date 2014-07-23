@@ -25,11 +25,11 @@ public class BackgroundView extends View{
 		
 		if (screenW > screenH){
 			
-			this.bm = BitmapFactory.decodeResource(getResources(), R.drawable.christine_land);
+			//this.bm = BitmapFactory.decodeResource(getResources(), R.drawable.christine_land);
 			
 		}else{
 			
-			this.bm = BitmapFactory.decodeResource(getResources(), R.drawable.christine_port);
+			//this.bm = BitmapFactory.decodeResource(getResources(), R.drawable.christine_port);
 			
 		}
 		this.matrix = new Matrix();

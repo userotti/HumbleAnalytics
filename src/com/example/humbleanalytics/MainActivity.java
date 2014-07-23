@@ -39,7 +39,7 @@ import android.widget.TextView;
 import android.os.Build;
 
 import com.humbletill.humbleanalytics.R;
-import com.smaatiboy.canvasplay.MyView;
+
 
 public class MainActivity extends ActionBarActivity implements AsyncResponse {
 	
@@ -52,12 +52,12 @@ public class MainActivity extends ActionBarActivity implements AsyncResponse {
 		super.onCreate(savedInstanceState);
 		
 		
-		FrameLayout baseLayout = (FrameLayout) findViewById(R.layout.activity_main);
+		/*FrameLayout baseLayout = (FrameLayout) findViewById(R.layout.activity_main);
 		
 		
 		backgroundview = new MyView(this, metrics.widthPixels, metrics.heightPixels-mActionBarSize);
 		
-		baseLayout.addView(backgroundview);
+		baseLayout.addView(backgroundview);*/
 		
 		//lv.addView(trihom);
 		
