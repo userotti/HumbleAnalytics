@@ -794,11 +794,12 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f060002;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f070010;
+        public static final int abc_search_url_text_holo=0x7f070011;
         public static final int abc_search_url_text_normal=0x7f070000;
         public static final int abc_search_url_text_pressed=0x7f070002;
         public static final int abc_search_url_text_selected=0x7f070001;
-        public static final int black=0x7f07000f;
+        public static final int black=0x7f070010;
+        public static final int blue1=0x7f07000b;
         public static final int green1=0x7f070003;
         public static final int green2=0x7f070004;
         public static final int green3=0x7f070005;
@@ -807,10 +808,10 @@ containing a value of this type.
         public static final int green6=0x7f070008;
         public static final int green7=0x7f070009;
         public static final int green8=0x7f07000a;
-        public static final int heading_shadow=0x7f07000d;
-        public static final int humblegreen=0x7f07000b;
-        public static final int shadowgreen=0x7f07000c;
-        public static final int white=0x7f07000e;
+        public static final int heading_shadow=0x7f07000e;
+        public static final int humblegreen=0x7f07000c;
+        public static final int shadowgreen=0x7f07000d;
+        public static final int white=0x7f07000f;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -1020,27 +1021,32 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int customprogressbar=0x7f020057;
-        public static final int editshape=0x7f020058;
-        public static final int grossprofit_background=0x7f020059;
-        public static final int header=0x7f02005a;
-        public static final int humble_analytics_background=0x7f02005b;
-        public static final int humble_logo=0x7f02005c;
-        public static final int ic_launcher=0x7f02005d;
-        public static final int landingpage=0x7f02005e;
-        public static final int loadingsquare=0x7f02005f;
-        public static final int loadingsquare2=0x7f020060;
-        public static final int mycurrencies_background=0x7f020061;
-        public static final int stockonhand_background=0x7f020062;
-        public static final int tester=0x7f020063;
-        public static final int thumbsup=0x7f020064;
-        public static final int todaysales_background=0x7f020065;
-        public static final int todaytransactions_background=0x7f020066;
-        public static final int topsalesperson_background=0x7f020067;
-        public static final int topsellingprod_background=0x7f020068;
-        public static final int turnover_background=0x7f020069;
-        public static final int turnover_icon=0x7f02006a;
-        public static final int white_background=0x7f02006b;
+        public static final int background_bitmap=0x7f020057;
+        public static final int christine_land=0x7f020058;
+        public static final int christine_port=0x7f020059;
+        public static final int customprogressbar=0x7f02005a;
+        public static final int editshape=0x7f02005b;
+        public static final int grossprofit_background=0x7f02005c;
+        public static final int header=0x7f02005d;
+        public static final int humble_analytics_background=0x7f02005e;
+        public static final int humble_logo=0x7f02005f;
+        public static final int ic_launcher=0x7f020060;
+        public static final int landingpage=0x7f020061;
+        public static final int loadingsquare=0x7f020062;
+        public static final int loadingsquare2=0x7f020063;
+        public static final int mycurrencies_background=0x7f020064;
+        public static final int scaled_bg=0x7f020065;
+        public static final int stockimg0=0x7f020066;
+        public static final int stockonhand_background=0x7f020067;
+        public static final int tester=0x7f020068;
+        public static final int thumbsup=0x7f020069;
+        public static final int todaysales_background=0x7f02006a;
+        public static final int todaytransactions_background=0x7f02006b;
+        public static final int topsalesperson_background=0x7f02006c;
+        public static final int topsellingprod_background=0x7f02006d;
+        public static final int turnover_background=0x7f02006e;
+        public static final int turnover_icon=0x7f02006f;
+        public static final int white_background=0x7f020070;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1062,7 +1068,7 @@ containing a value of this type.
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
         public static final int container=0x7f05003c;
-        public static final int continueBtn=0x7f05008c;
+        public static final int continueBtn=0x7f05008d;
         public static final int default_activity_button=0x7f050028;
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
@@ -1086,9 +1092,9 @@ containing a value of this type.
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050029;
         public static final int loading_animation=0x7f050086;
-        public static final int loadingsquareID=0x7f05008f;
-        public static final int loginBtn=0x7f05008d;
-        public static final int main_login_message=0x7f05008e;
+        public static final int loginBtn=0x7f05008e;
+        public static final int main_layout=0x7f05008c;
+        public static final int main_login_message=0x7f05008f;
         public static final int middle=0x7f050012;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;

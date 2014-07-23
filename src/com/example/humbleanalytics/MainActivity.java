@@ -2,6 +2,7 @@ package com.example.humbleanalytics;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
@@ -10,6 +11,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -29,30 +31,17 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.os.Build;
+
 import com.humbletill.humbleanalytics.R;
+import com.smaatiboy.canvasplay.MyView;
 
 public class MainActivity extends ActionBarActivity implements AsyncResponse {
-	
-	
-	/*Button submit_btn;
-
-    EditText email_edit, password_edit;
-    String email_str, password_str;
-    
-    String address;
-    NetworkThreadHandler handler;
-    
-    JSONObject ALL_THE_SITEGUIDS;
-    Boolean task_is_running = false;
-    ProgressBar loading_circle;
-    TextView login_message;*/
-    
-	AnimatorSet set;
 	
 	AnalyticsApplication THEAPP;
 	Boolean task_is_running;
@@ -61,8 +50,19 @@ public class MainActivity extends ActionBarActivity implements AsyncResponse {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		
+		FrameLayout baseLayout = (FrameLayout) findViewById(R.layout.activity_main);
+		
+		
+		backgroundview = new MyView(this, metrics.widthPixels, metrics.heightPixels-mActionBarSize);
+		
+		baseLayout.addView(backgroundview);
+		
+		//lv.addView(trihom);
+		
 		setContentView(R.layout.activity_main);
-
+		
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
@@ -93,7 +93,9 @@ public class MainActivity extends ActionBarActivity implements AsyncResponse {
 			 
 		 };
 		 
-		 findViewById(R.id.loadingsquareID).setVisibility(View.GONE);
+		 
+		 //leave it off
+		 
 		 this.task_is_running = false;
 		 
 		 
@@ -103,26 +105,11 @@ public class MainActivity extends ActionBarActivity implements AsyncResponse {
 	protected void onResume(){
 		super.onResume();
 		
-	    View v = findViewById(R.id.loadingsquareID);
-	    ObjectAnimator animation1 = ObjectAnimator.ofFloat(v, "rotationY", 0.0f, 1080f);
-	    ObjectAnimator animation2 = ObjectAnimator.ofFloat(v, "rotationX", 0.0f, 0.0f);
-	    
-		animation1.setRepeatCount(ObjectAnimator.INFINITE);
-		animation1.setInterpolator(new AccelerateDecelerateInterpolator());
 		
-		animation2.setRepeatCount(ObjectAnimator.INFINITE);
-		animation2.setInterpolator(new AccelerateDecelerateInterpolator());
+		/*RelativeLayout layout =(RelativeLayout)findViewById(R.id.main_layout);
+		layout.setBackgroundResource(R.drawable.ready);
 		
-		this.set = new AnimatorSet();
-		this.set.play(animation1).with(animation2);
-		this.set.setDuration(2500);
-		
-		ImageView img = (ImageView) findViewById(R.id.loadingsquareID);
-		img.setVisibility(View.GONE); 
-		
-		RelativeLayout.LayoutParams p = new RelativeLayout.LayoutParams(250,
-		        ViewGroup.LayoutParams.WRAP_CONTENT);
-		
+		*/
 		
 		((TextView) findViewById(R.id.main_login_message)).setText("");
 		
@@ -141,13 +128,7 @@ public class MainActivity extends ActionBarActivity implements AsyncResponse {
         	Button newbtn = (Button) findViewById(R.id.continueBtn);
         	
         	newbtn.setVisibility(View.GONE);
-        	/*if (newbtn != null){
-	        	ViewGroup vg = (ViewGroup)(newbtn.getParent());
-	        	vg.removeView(newbtn);
-        	}
         	
-        	RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) findViewById(R.id.loginBtn).getLayoutParams();
-    		params.addRule(RelativeLayout.BELOW, R.id.imageView1);*/
     		
         }
         
@@ -157,9 +138,9 @@ public class MainActivity extends ActionBarActivity implements AsyncResponse {
 		
 		if (this.task_is_running == false){
 			
-		this.set.start();
+		/*this.set.start();
 		ImageView img = (ImageView) findViewById(R.id.loadingsquareID);
-		img.setVisibility(View.VISIBLE); 
+		img.setVisibility(View.VISIBLE); */
 		
 		//this.THEAPP.BootStrapStart();
 		
