@@ -2,6 +2,7 @@ package com.example.humbleanalytics;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
@@ -10,14 +11,17 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -27,10 +31,12 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.os.Build;
+
 import com.humbletill.humbleanalytics.R;
 
 public class Login extends ActionBarActivity implements AsyncResponse {
@@ -60,7 +66,20 @@ public class Login extends ActionBarActivity implements AsyncResponse {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
-
+		
+		DisplayMetrics metrics = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(metrics);
+		final TypedArray styledAttributes = getApplicationContext().getTheme().obtainStyledAttributes(
+		                new int[] { android.R.attr.actionBarSize });
+		int mActionBarSize = (int) styledAttributes.getDimension(0, 0);
+		styledAttributes.recycle();
+		final float scale = this.getResources().getDisplayMetrics().density;
+		
+		BackgroundView backgroundview1 = new BackgroundView(this, metrics.widthPixels, metrics.heightPixels-mActionBarSize);
+		
+		FrameLayout therooview =  (FrameLayout)findViewById(R.id.container);
+		therooview.addView(backgroundview1);
+		
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
@@ -73,12 +92,12 @@ public class Login extends ActionBarActivity implements AsyncResponse {
 	protected void onResume(){
 		super.onResume();
 		
-		EditText e = (EditText) findViewById(R.id.email_textedit);
+		EditText e = (EditText) findViewById(R.id.email_textedit2);
 		
 		e.requestFocus();
 	
 		
-		/* LOADING ANIMATION SETUP */
+		/* LOADING ANIMATION SETUP 
 		
 		View v = findViewById(R.id.loading_animation);
 	    ObjectAnimator animation1 = ObjectAnimator.ofFloat(v, "rotationY", 0.0f, 1080f);
@@ -94,7 +113,7 @@ public class Login extends ActionBarActivity implements AsyncResponse {
 		
 		this.set = new AnimatorSet();
 		this.set.play(animation1).with(animation2);
-		this.set.setDuration(2500);
+		this.set.setDuration(2500);*/
 		
 		
 	}
@@ -139,7 +158,7 @@ public class Login extends ActionBarActivity implements AsyncResponse {
 			 
 		 };
 		 
-		 this.loading_square.setVisibility(View.GONE);
+		
 		 this.task_is_running = false;
 		
 	}
@@ -150,15 +169,16 @@ public class Login extends ActionBarActivity implements AsyncResponse {
 		
         if (this.task_is_running == false){
         
+        	/*
         	this.loading_square = (ImageView) findViewById(R.id.loading_animation);
         	this.loading_square.setVisibility(View.VISIBLE);
         	this.set.start();
-			
+			*/
         	
         	this.login_message = (TextView) findViewById(R.id.output_view);
         	this.login_message.setText("");
         	
-			email_edit = (EditText)findViewById(R.id.email_textedit);
+			email_edit = (EditText)findViewById(R.id.email_textedit2);
 	        password_edit = (EditText)findViewById(R.id.password_textedit);
 	        
 	        

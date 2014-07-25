@@ -2,9 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/landingpage"
+ 	
     tools:context="com.example.humbleanalytics.Login$PlaceholderFragment" >
 
+    <!--
     <TextView
         android:id="@+id/output_view"
         android:layout_width="wrap_content"
@@ -13,8 +14,11 @@
         android:layout_below="@+id/button1"
         android:layout_marginTop="35dp"
         android:text="" />
+    -->
 
-   <!--  <ProgressBar
+
+    <!--
+         <ProgressBar
         android:id="@+id/loading_animation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,36 +26,11 @@
         android:layout_marginLeft="25dp"
         android:layout_toRightOf="@+id/button1"
         android:visibility="gone"
-         /> -->
-    
-    <ImageView
-        android:id="@+id/loading_animation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button1"
-        android:layout_marginLeft="50dp"
-        android:layout_toRightOf="@+id/button1"
-        android:src="@drawable/loadingsquare"
-		
          />
-    	
-    <EditText
-        
-        
-        android:id="@+id/password_textedit"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/email_textedit"
-        android:layout_below="@+id/email_textedit"
-        android:layout_marginTop="27dp"
-        android:background="@drawable/editshape"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:paddingBottom="10dip"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"/> 
+    -->
 
+
+    <!--
     <Button
         android:id="@+id/button1"
         android:layout_width="250dp"
@@ -63,38 +42,71 @@
         android:onClick="clickFunc1"
         android:text="Login"
         android:textColor="#ffffff" />
+    -->
 
-    <TextView
-        android:id="@+id/textView1"
+    <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/email_textedit"
-        android:layout_alignBottom="@+id/email_textedit"
-        android:layout_marginRight="33dp"
-        android:layout_toLeftOf="@+id/email_textedit"
-        android:text="Email:"
-        android:textColor="#ffffff"
-        
-         />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="21dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/humble_logo" />
+
+    <EditText
+        android:id="@+id/password_textedit"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/editshape"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:paddingBottom="10dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password_textedit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/tester"
+        android:onClick="clickFunc1"
+        android:text="Login"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/password_textedit"
-        android:layout_alignBottom="@+id/password_textedit"
-        android:layout_alignRight="@+id/textView1"
-        android:text="Password:" 
-        android:textColor="#ffffff"
-        />
+        android:layout_above="@+id/password_textedit"
+        android:layout_alignRight="@+id/password_textedit"
+        android:layout_marginBottom="10dp"
+        android:text="Password:"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/email_textedit2"
+        android:layout_alignRight="@+id/textView2"
+        android:text="Email:"
+        android:layout_marginBottom="10dp"
+        android:textColor="#ffffff" />
 
     <EditText
-        android:id="@+id/email_textedit"
-        android:layout_width="350dp"
+        android:id="@+id/email_textedit2"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="292dp"
+        android:layout_above="@+id/textView2"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/editshape"
         android:ems="10"
         android:inputType="textEmailAddress"
@@ -102,16 +114,15 @@
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip" />
-       
-        
 
-    <ImageView
-        android:id="@+id/imageView1"
+    <TextView
+        android:id="@+id/output_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="34dp"
-        android:src="@drawable/humble_logo" />
+        android:layout_alignLeft="@+id/password_textedit"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="37dp"
+        android:textColor="@color/white"
+        android:text="" />
 
 </RelativeLayout>

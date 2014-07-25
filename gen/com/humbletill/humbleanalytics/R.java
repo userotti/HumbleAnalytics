@@ -931,7 +931,11 @@ containing a value of this type.
         public static final int corner_radius=0x7f080013;
         public static final int dropshadow_size=0x7f080014;
         public static final int heading_area=0x7f080016;
+        public static final int heading_size=0x7f080017;
+        public static final int largetext_size=0x7f080018;
+        public static final int mediumtext_size=0x7f080019;
         public static final int padding_between=0x7f080015;
+        public static final int smalltext_size=0x7f08001a;
     }
     public static final class drawable {
         public static final int abc_ab_bottom_solid_dark_holo=0x7f020000;
@@ -1022,31 +1026,35 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int background_bitmap=0x7f020057;
-        public static final int christine_land=0x7f020058;
-        public static final int christine_port=0x7f020059;
-        public static final int customprogressbar=0x7f02005a;
-        public static final int editshape=0x7f02005b;
-        public static final int grossprofit_background=0x7f02005c;
-        public static final int header=0x7f02005d;
-        public static final int humble_analytics_background=0x7f02005e;
-        public static final int humble_logo=0x7f02005f;
-        public static final int ic_launcher=0x7f020060;
-        public static final int landingpage=0x7f020061;
-        public static final int loadingsquare=0x7f020062;
-        public static final int loadingsquare2=0x7f020063;
-        public static final int mycurrencies_background=0x7f020064;
-        public static final int scaled_bg=0x7f020065;
-        public static final int stockimg0=0x7f020066;
-        public static final int stockonhand_background=0x7f020067;
-        public static final int tester=0x7f020068;
-        public static final int thumbsup=0x7f020069;
-        public static final int todaysales_background=0x7f02006a;
-        public static final int todaytransactions_background=0x7f02006b;
-        public static final int topsalesperson_background=0x7f02006c;
-        public static final int topsellingprod_background=0x7f02006d;
-        public static final int turnover_background=0x7f02006e;
-        public static final int turnover_icon=0x7f02006f;
-        public static final int white_background=0x7f020070;
+        public static final int bottomborder=0x7f020058;
+        public static final int christine_land=0x7f020059;
+        public static final int christine_port=0x7f02005a;
+        public static final int customprogressbar=0x7f02005b;
+        public static final int editshape=0x7f02005c;
+        public static final int grossprofit_background=0x7f02005d;
+        public static final int header=0x7f02005e;
+        public static final int headingbackground=0x7f02005f;
+        public static final int humble_analytics_background=0x7f020060;
+        public static final int humble_logo=0x7f020061;
+        public static final int ic_launcher=0x7f020062;
+        public static final int ic_menu_home=0x7f020063;
+        public static final int ic_menu_refresh=0x7f020064;
+        public static final int landingpage=0x7f020065;
+        public static final int loadingsquare=0x7f020066;
+        public static final int loadingsquare2=0x7f020067;
+        public static final int mycurrencies_background=0x7f020068;
+        public static final int scaled_bg=0x7f020069;
+        public static final int stockimg0=0x7f02006a;
+        public static final int stockonhand_background=0x7f02006b;
+        public static final int tester=0x7f02006c;
+        public static final int thumbsup=0x7f02006d;
+        public static final int todaysales_background=0x7f02006e;
+        public static final int todaytransactions_background=0x7f02006f;
+        public static final int topsalesperson_background=0x7f020070;
+        public static final int topsellingprod_background=0x7f020071;
+        public static final int turnover_background=0x7f020072;
+        public static final int turnover_icon=0x7f020073;
+        public static final int white_background=0x7f020074;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1060,21 +1068,21 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f050090;
+        public static final int action_settings=0x7f050093;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
-        public static final int button1=0x7f050085;
+        public static final int button1=0x7f05008a;
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
         public static final int container=0x7f05003c;
-        public static final int continueBtn=0x7f05008d;
+        public static final int continueBtn=0x7f050091;
         public static final int default_activity_button=0x7f050028;
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
         public static final int dropdown=0x7f05000f;
         public static final int edit_query=0x7f050030;
-        public static final int email_textedit=0x7f050088;
+        public static final int email_textedit2=0x7f05008d;
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050026;
         public static final int expanded_menu=0x7f05002c;
@@ -1088,25 +1096,25 @@ containing a value of this type.
         public static final int icon=0x7f05002a;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050027;
-        public static final int imageView1=0x7f05008b;
+        public static final int imageView1=0x7f050088;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050029;
-        public static final int loading_animation=0x7f050086;
-        public static final int loginBtn=0x7f05008e;
-        public static final int main_layout=0x7f05008c;
-        public static final int main_login_message=0x7f05008f;
+        public static final int loginBtn=0x7f050090;
+        public static final int main_layout=0x7f05008f;
+        public static final int main_login_message=0x7f050092;
         public static final int middle=0x7f050012;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
-        public static final int output_view=0x7f050084;
-        public static final int password_textedit=0x7f050087;
+        public static final int output_view=0x7f05008e;
+        public static final int password_textedit=0x7f050089;
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
         public static final int radio=0x7f05002f;
-        public static final int refresh_settings=0x7f050091;
+        public static final int refresh_settings=0x7f050094;
         public static final int sales_persqrmtr_heading=0x7f050067;
         public static final int sales_persqrmtr_view=0x7f050066;
+        public static final int scroll=0x7f050084;
         public static final int search_badge=0x7f050032;
         public static final int search_bar=0x7f050031;
         public static final int search_button=0x7f050033;
@@ -1127,12 +1135,18 @@ containing a value of this type.
         public static final int stock_on_hand_heading=0x7f050055;
         public static final int stock_on_hand_retail_heading=0x7f050059;
         public static final int stock_on_hand_retail_view=0x7f050058;
+        public static final int store1=0x7f050096;
+        public static final int store2=0x7f050097;
+        public static final int store3=0x7f050098;
         public static final int store_weather_heading=0x7f050080;
+        public static final int stores=0x7f050095;
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;
-        public static final int textView1=0x7f050089;
-        public static final int textView2=0x7f05008a;
+        public static final int textView1=0x7f05008c;
+        public static final int textView2=0x7f05008b;
+        public static final int textview_placement=0x7f050085;
         public static final int thumbs_icon1=0x7f05003e;
+        public static final int thumbs_icon2=0x7f050086;
         public static final int title=0x7f05002b;
         public static final int today_sales_heading=0x7f050043;
         public static final int todays_sales_ave_trans_heading=0x7f050049;
@@ -1194,6 +1208,7 @@ containing a value of this type.
         public static final int weather_descr_view=0x7f050083;
         public static final int weather_image=0x7f050081;
         public static final int weather_tempc_view=0x7f050082;
+        public static final int weather_tempc_view_desc=0x7f050087;
         public static final int withText=0x7f05000c;
     }
     public static final class integer {
@@ -1249,15 +1264,17 @@ containing a value of this type.
         public static final int activity_login=0x7f030018;
         public static final int activity_main=0x7f030019;
         public static final int fragment_dash_board=0x7f03001a;
-        public static final int fragment_login=0x7f03001b;
-        public static final int fragment_main=0x7f03001c;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
+        public static final int fragment_dash_board_scrollview=0x7f03001b;
+        public static final int fragment_login=0x7f03001c;
+        public static final int fragment_main=0x7f03001d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
     }
     public static final class menu {
         public static final int dash_board=0x7f0c0000;
         public static final int display_app_data=0x7f0c0001;
         public static final int login=0x7f0c0002;
         public static final int main=0x7f0c0003;
+        public static final int stores_menu=0x7f0c0004;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1341,13 +1358,14 @@ containing a value of this type.
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f0b0084;
-        public static final int BasicContainer=0x7f0b008a;
-        public static final int BottomContainerStyles=0x7f0b0095;
-        public static final int BottomElements=0x7f0b0098;
-        public static final int BottomHeadings=0x7f0b0096;
-        public static final int BottomSubHeadingElements=0x7f0b0097;
-        public static final int Elements=0x7f0b0088;
-        public static final int GrossProfitContainer=0x7f0b008b;
+        public static final int BasicContainer=0x7f0b008e;
+        public static final int BasicScrollViewElement=0x7f0b0088;
+        public static final int BottomContainerStyles=0x7f0b0099;
+        public static final int BottomElements=0x7f0b009c;
+        public static final int BottomHeadings=0x7f0b009a;
+        public static final int BottomSubHeadingElements=0x7f0b009b;
+        public static final int Elements=0x7f0b008c;
+        public static final int GrossProfitContainer=0x7f0b008f;
         /** 
     <style name="Headings">
         
@@ -1362,26 +1380,19 @@ containing a value of this type.
     </style> 
   will app look 
          */
-        public static final int Headings=0x7f0b0087;
-        public static final int ImageElements=0x7f0b0089;
-        public static final int MainContainer=0x7f0b0085;
-        public static final int MyCurrenciesContainer=0x7f0b0092;
-        /** 
-    <style name="Headings">
-        
-        <item name="android:textColor">@color/white</item>
-        <item name="android:paddingRight">@dimen/dropshadow_size</item>
-        <item name="android:textSize">22sp</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">0dp</item>
-        <item name="android:layout_weight">2</item>
-        <item name="android:gravity">left</item>
-         
-    </style> 
-  will app look 
+        public static final int Headings=0x7f0b008b;
+        public static final int ImageElements=0x7f0b008d;
+        public static final int ListItemRelativeContainer=0x7f0b0086;
+        /**  end of scroll styles 
          */
-        public static final int RelativeBasicContainer=0x7f0b0086;
-        public static final int StockOnHandContainer=0x7f0b008f;
+        public static final int MainContainer=0x7f0b0089;
+        public static final int MainList=0x7f0b0085;
+        public static final int MyCurrenciesContainer=0x7f0b0096;
+        /**   will app look 
+         */
+        public static final int RelativeBasicContainer=0x7f0b008a;
+        public static final int ScrollViewHeadings=0x7f0b0087;
+        public static final int StockOnHandContainer=0x7f0b0093;
         /**  Mimic text appearance in select_dialog_item.xml 
          */
         public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f0b0063;
@@ -1475,16 +1486,16 @@ containing a value of this type.
         /**  Base platform-dependent theme providing a light-themed activity. 
          */
         public static final int Theme_Base_Light=0x7f0b007d;
-        public static final int TodaySalesContainer=0x7f0b008d;
-        public static final int TodayTransactionsContainer=0x7f0b008e;
+        public static final int TodaySalesContainer=0x7f0b0091;
+        public static final int TodayTransactionsContainer=0x7f0b0092;
         /**   HIER VOLG DIEOU GOED 
   HIER VOLG DIEOU GOED 
          */
-        public static final int TopContainerStyles=0x7f0b0093;
-        public static final int TopSalesPersonContainer=0x7f0b0091;
-        public static final int TopSellingProdContainer=0x7f0b0090;
-        public static final int TopSubHeadingElements=0x7f0b0094;
-        public static final int TurnoverContainer=0x7f0b008c;
+        public static final int TopContainerStyles=0x7f0b0097;
+        public static final int TopSalesPersonContainer=0x7f0b0095;
+        public static final int TopSellingProdContainer=0x7f0b0094;
+        public static final int TopSubHeadingElements=0x7f0b0098;
+        public static final int TurnoverContainer=0x7f0b0090;
         /**  Styles in here can be extended for customisation in your application. Each utilises
          one of the Base styles. If Holo themes are available on the current platform version
          they will be used instead of the compat styles. 

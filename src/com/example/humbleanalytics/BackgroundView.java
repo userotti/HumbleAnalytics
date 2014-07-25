@@ -1,11 +1,15 @@
 package com.example.humbleanalytics;
 
+import com.humbletill.humbleanalytics.R;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 
@@ -18,18 +22,17 @@ public class BackgroundView extends View{
 	private int screenHeight;
 	
 	
-	
 	public BackgroundView(Context context, int screenW, int screenH) {
 		super(context);
 		// TODO Auto-generated constructor stub
 		
 		if (screenW > screenH){
 			
-			//this.bm = BitmapFactory.decodeResource(getResources(), R.drawable.christine_land);
+			this.bm = BitmapFactory.decodeResource(getResources(), R.drawable.christine_land);
 			
 		}else{
 			
-			//this.bm = BitmapFactory.decodeResource(getResources(), R.drawable.christine_port);
+			this.bm = BitmapFactory.decodeResource(getResources(), R.drawable.christine_port);
 			
 		}
 		this.matrix = new Matrix();
@@ -59,6 +62,8 @@ public class BackgroundView extends View{
 		
 		init();
 		
+		Log.d("word ge", "create");
+	
 	}
 	
 	public void init(){
@@ -86,6 +91,12 @@ public class BackgroundView extends View{
     	
 
     	setMeasuredDimension(this.screenWidth, this.screenHeight);	
+    }
+    
+    public void printMe() {
+    
+    	Log.d("PRINTME", "PRINTME");	
+    
     }
 
 }

@@ -18,9 +18,11 @@ import android.support.v4.app.Fragment;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -50,18 +52,19 @@ public class MainActivity extends ActionBarActivity implements AsyncResponse {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		
-		/*FrameLayout baseLayout = (FrameLayout) findViewById(R.layout.activity_main);
-		
-		
-		backgroundview = new MyView(this, metrics.widthPixels, metrics.heightPixels-mActionBarSize);
-		
-		baseLayout.addView(backgroundview);*/
-		
-		//lv.addView(trihom);
-		
 		setContentView(R.layout.activity_main);
+		DisplayMetrics metrics = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(metrics);
+		final TypedArray styledAttributes = getApplicationContext().getTheme().obtainStyledAttributes(
+		                new int[] { android.R.attr.actionBarSize });
+		int mActionBarSize = (int) styledAttributes.getDimension(0, 0);
+		styledAttributes.recycle();
+		final float scale = this.getResources().getDisplayMetrics().density;
+	
+		BackgroundView backgroundview1 = new BackgroundView(this, metrics.widthPixels, metrics.heightPixels-mActionBarSize);
+	
+		FrameLayout therooview =  (FrameLayout)findViewById(R.id.container);
+		therooview.addView(backgroundview1);
 		
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()

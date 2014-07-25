@@ -130,7 +130,7 @@
 		            
 		            <TextView 
 		            style="@style/Elements"
-				    android:text="Gross Profit Value"
+				    android:text="Total Turnover Excl VAT"
 				    android:textSize="12sp"
 				    android:layout_weight="1"
 				    android:typeface="normal"

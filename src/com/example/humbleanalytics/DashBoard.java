@@ -1,18 +1,27 @@
 package com.example.humbleanalytics;
 
 import java.io.InputStream;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import android.app.Activity;
 import android.app.ActionBar;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.app.Fragment;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,6 +30,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.os.Build;
+
 import com.humbletill.humbleanalytics.R;
 
 public class DashBoard extends Activity implements AsyncResponse {
@@ -30,6 +40,9 @@ public class DashBoard extends Activity implements AsyncResponse {
 	
 	AnalyticsApplication THEAPP;
 	
+	SitesDialogFragment thedialog;
+	
+	int siteNumber = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +57,19 @@ public class DashBoard extends Activity implements AsyncResponse {
 		this.THEAPP = ((AnalyticsApplication) this.getApplication());
 		
 		
+		
+		thedialog = new SitesDialogFragment();
+		
+		thedialog.setContext(this);
+		
+		
+		
+		
+		
+		
 	}
-
+	
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -64,7 +88,10 @@ public class DashBoard extends Activity implements AsyncResponse {
 			this.ALLAPPDATA = new JSONObject(getIntent().getStringExtra("DATA_STRING"));
 			this.APPDATA = new JSONObject(this.ALLAPPDATA.getString("data"));
 			setTitle(this.APPDATA.getString("sitename") + " - Dashboard");
-			this.setTopRowValues();
+			//setTitle("Humble Test Store - Dashboard");
+			
+			this.setAllValues();
+			
 		
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -88,15 +115,36 @@ public class DashBoard extends Activity implements AsyncResponse {
 			this.THEAPP.shootTheRequest();
 			
 		}
+		
+		
+		
+		if (id == R.id.stores) {
+			
+			
+			this.thedialog.show(getFragmentManager(), "missiles");
+			
+		}
+		
 		return super.onOptionsItemSelected(item);
 	}
 	
+	public void setSiteChoice(int sitechoice){
+		
+		this.siteNumber = sitechoice;
+		
+		setTitle("Loading new data...");
+		
+		this.THEAPP.setDelegate(this);
+		this.THEAPP.makeNewAsyncTaskForLogin();
+		this.THEAPP.shootTheRequest();
+		
+	}
 	
 	public void processFinish(Object message){
 		
 		if (message.equals("OK")){
 			 
-			 this.THEAPP.makeNewSiteActivity("dashboard", 0, true);
+			 this.THEAPP.makeNewSiteActivity("dashboard", this.siteNumber, true);
 			 finish();
 		 
 		 }else{
@@ -106,7 +154,7 @@ public class DashBoard extends Activity implements AsyncResponse {
 		 };
 	}
 	
-	public void setTopRowValues() throws JSONException{
+	public void setAllValues() throws JSONException{
 		
 		int comma_pos = (this.APPDATA.getString("mtd_gpperc").indexOf('.'));
 		((TextView)findViewById(R.id.gp_perc_view)).setText((this.APPDATA.getString("mtd_gpperc")).substring(0,comma_pos+2) + "%");
@@ -326,7 +374,7 @@ public class DashBoard extends Activity implements AsyncResponse {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_dash_board,
+			View rootView = inflater.inflate(R.layout.fragment_dash_board_scrollview,
 					container, false);
 			return rootView;
 		}
@@ -356,7 +404,11 @@ public class DashBoard extends Activity implements AsyncResponse {
 		      bmImage.setImageBitmap(result);
 		  }
 		}
-
+	
+	
+	
 
 }
+
+
 

@@ -3,64 +3,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_bitmap"
-    
-    tools:context="com.example.humbleanalytics.MainActivity$PlaceholderFragment" >
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
+  
+    tools:context="com.example.humbleanalytics.MainActivity$PlaceholderFragment" >         
+ <!--   android:background="@color/black" -->
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/humble_logo" />
-
+        android:layout_centerVertical="true"
+        android:background="@drawable/tester"
+        android:onClick="loginButton"
+        android:text="Login"
+        android:textColor="#ffffff" />
+    
+     
     <Button
         android:id="@+id/continueBtn"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView1"
+        android:layout_below="@+id/loginBtn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="22dp"
         android:background="@drawable/tester"
         android:onClick="continueButton"
         android:textColor="#ffffff" 
         android:text="user_email"
         />
     
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/continueBtn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/tester"
-        android:onClick="loginButton"
-        android:textColor="#ffffff" 
-        android:text="Login"
-        
-        />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="149dp"
-        android:text="Welcome to"
-        android:textColor="#ffffff"
-        android:textSize="35dp" />
-
+  
     <TextView
         android:id="@+id/main_login_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/loginBtn"
-        android:layout_below="@+id/loginBtn"
+        android:layout_below="@+id/continueBtn"
         android:layout_marginTop="30dp"
         android:text=""
         android:textColor="#ffffff" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="23dp"
+        android:src="@drawable/humble_logo" />
 
 </RelativeLayout>

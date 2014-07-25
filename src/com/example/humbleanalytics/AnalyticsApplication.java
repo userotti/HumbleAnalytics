@@ -27,6 +27,8 @@ public class AnalyticsApplication extends Application implements AsyncResponse {
     
 
     ArrayList<String> THE_SITE_GUIDS = new ArrayList<String>();
+    ArrayList<String> THE_SITE_NAMES = new ArrayList<String>();
+    
     ArrayList<JSONObject> THE_LASTEST_SITE_STATS = new ArrayList<JSONObject>();
     
     String current_site_name;
@@ -95,6 +97,8 @@ public class AnalyticsApplication extends Application implements AsyncResponse {
     		this.current_activity_number = site_num; 
     		String data_string = this.THE_LASTEST_SITE_STATS.get(site_num).toString();
     		
+    		Log.d("DATASTRING", data_string);
+    		
     		Intent intent = new Intent(this, DashBoard.class);
     		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     		intent.putExtra( "DATA_STRING" , data_string);
@@ -130,10 +134,13 @@ public class AnalyticsApplication extends Application implements AsyncResponse {
 				
 					int i;
 					this.THE_SITE_GUIDS.clear();
+					this.THE_SITE_NAMES.clear();
 					
 					for (i = 0; i < thesitesarray.length(); i++){
 						JSONObject theelement = (JSONObject)thesitesarray.get(i);
 						this.THE_SITE_GUIDS.add(theelement.get("siteguid").toString());
+						this.THE_SITE_NAMES.add(theelement.get("sitename").toString());
+						
 					}
 					
 					Log.d("LOGINBOL", this.LOGIN_DATA_BOL.toString());
@@ -198,6 +205,12 @@ public class AnalyticsApplication extends Application implements AsyncResponse {
 		
 		}
 		
+	}
+	
+	public CharSequence[] getSiteNames(){
+		
+		return this.THE_SITE_NAMES.toArray(new CharSequence[this.THE_SITE_NAMES.size()]);
+
 	}
 	
 	public int getSitesArrayLength(){
